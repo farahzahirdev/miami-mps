@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { CheckCircle2 } from "lucide-react";
 import { copy, site } from "@/content/en";
 import { InquiryForm } from "./InquiryForm";
@@ -52,18 +51,6 @@ export function Hero() {
           id="hero-form"
           className="scroll-mt-24 overflow-hidden rounded-2xl border border-mps-blue/10 bg-white shadow-xl shadow-mps-blue/10"
         >
-          <div className="px-5 pt-5 sm:px-6 sm:pt-6">
-            <Image
-              src="/images/tms.png"
-              alt={copy.hero.tmsImageAlt}
-              width={320}
-              height={320}
-              className="mx-auto h-32 w-auto object-contain sm:h-40"
-              priority
-            />
-            <h2 className="mt-4 text-mps-navy">{copy.hero.formTitle}</h2>
-            <p className="text-small mt-1 text-mps-navy/70">{copy.hero.formSubtitle}</p>
-          </div>
           <InquiryForm id="hero-inquiry" compact embedded />
         </div>
       </div>

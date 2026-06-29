@@ -42,13 +42,7 @@ Copy lives in `src/content/en.ts`. When Spanish copy is ready, add `src/content/
 
 ## Form Integration
 
-The inquiry form currently shows a success message on submit (placeholder). Wire it to your preferred backend:
-
-- Email service (EmailJS, Resend, etc.)
-- CRM (HubSpot, Salesforce)
-- Squarespace form endpoint
-
-Update `src/components/InquiryForm.tsx` → `handleSubmit`.
+The inquiry form is embedded from GoHighLevel (4TMS) in `src/components/InquiryForm.tsx`. To use a different form, update the iframe `src` and `data-form-id` in that component.
 
 ## Build for Production
 
