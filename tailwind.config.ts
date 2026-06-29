@@ -40,7 +40,7 @@ const config: Config = {
         button: "0.04em",
       },
       maxWidth: {
-        content: "1350px",
+        content: "1400px",
       },
       borderRadius: {
         petal: "16px 0",

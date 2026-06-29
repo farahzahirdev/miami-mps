@@ -2,9 +2,11 @@
 
 import Script from "next/script";
 
-const GHL_FORM_SRC = "https://go.4tms.com/widget/form/2ptCzjyn7W6KBUFJ1bgE";
+const GHL_FORM_SRC = "https://go.4tms.com/widget/form/A0v4eTzVsNAMZGoRCfmK";
 const GHL_SCRIPT_SRC = "https://go.4tms.com/js/form_embed.js";
-const GHL_FORM_ID = "2ptCzjyn7W6KBUFJ1bgE";
+const GHL_FORM_ID = "A0v4eTzVsNAMZGoRCfmK";
+const GHL_FORM_NAME = "TMS: New Web Inquiry + Params - Miami Psychiatric Services";
+const GHL_FORM_HEIGHT = "1338";
 
 type InquiryFormProps = {
   id?: string;
@@ -32,8 +34,8 @@ export function InquiryForm({
             width: "100%",
             height: "100%",
             border: "none",
-            borderRadius: "20px",
-            minHeight: compact ? "32rem" : "48rem",
+            borderRadius: "4px",
+            minHeight: compact ? "28rem" : "42rem",
           }}
           id={iframeId}
           data-layout='{"id":"INLINE"}'
@@ -43,11 +45,11 @@ export function InquiryForm({
           data-activation-value=""
           data-deactivation-type="neverDeactivate"
           data-deactivation-value=""
-          data-form-name="TMS: New Web Inquiry + Params"
-          data-height="1927"
+          data-form-name={GHL_FORM_NAME}
+          data-height={GHL_FORM_HEIGHT}
           data-layout-iframe-id={iframeId}
           data-form-id={GHL_FORM_ID}
-          title="TMS: New Web Inquiry + Params"
+          title={GHL_FORM_NAME}
         />
       </div>
       <Script src={GHL_SCRIPT_SRC} strategy="lazyOnload" />
