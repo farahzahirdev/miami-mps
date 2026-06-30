@@ -1,7 +1,7 @@
 "use client";
 
 import { useId, useState } from "react";
-import { copy } from "@/content/en";
+import { useLocale } from "@/context/LocaleProvider";
 import { Button } from "./Button";
 
 function FaqItem({ question, answer }: { question: string; answer: string }) {
@@ -42,6 +42,8 @@ function FaqItem({ question, answer }: { question: string; answer: string }) {
 }
 
 export function FaqList() {
+  const { copy } = useLocale();
+
   return (
     <>
       <div className="mx-auto mt-12 max-w-3xl">

@@ -1,8 +1,11 @@
+"use client";
+
 import Image from "next/image";
 import { MapPin, Phone } from "lucide-react";
-import { copy, site } from "@/content/en";
+import { useLocale } from "@/context/LocaleProvider";
 
 export function Footer() {
+  const { copy, site } = useLocale();
   const year = new Date().getFullYear();
 
   return (
@@ -21,7 +24,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="section-eyebrow mb-3">Contact</h3>
+            <h3 className="section-eyebrow mb-3">{copy.footer.contactHeading}</h3>
             <ul className="text-small space-y-2 text-mps-navy/80">
               <li>
                 <a
@@ -40,7 +43,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="section-eyebrow mb-3">Quick Links</h3>
+            <h3 className="section-eyebrow mb-3">{copy.footer.quickLinksHeading}</h3>
             <ul className="text-small space-y-2 text-mps-navy/80">
               <li>
                 <a href="#tms" className="hover:text-mps-blue">

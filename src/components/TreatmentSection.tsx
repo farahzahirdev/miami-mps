@@ -1,5 +1,7 @@
+"use client";
+
 import Image from "next/image";
-import { copy } from "@/content/en";
+import { useLocale } from "@/context/LocaleProvider";
 import { Button } from "./Button";
 
 type TreatmentImage = {
@@ -21,6 +23,7 @@ export function TreatmentSection({
   images,
   reversed = false,
 }: TreatmentSectionProps) {
+  const { copy } = useLocale();
   const data = variant === "tms" ? copy.tms : copy.spravato;
 
   return (

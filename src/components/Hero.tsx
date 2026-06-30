@@ -1,9 +1,13 @@
+"use client";
+
 import { CheckCircle2 } from "lucide-react";
-import { copy, site } from "@/content/en";
+import { useLocale } from "@/context/LocaleProvider";
 import { InquiryForm } from "./InquiryForm";
 import { Button } from "./Button";
 
 export function Hero() {
+  const { copy, site } = useLocale();
+
   return (
     <section
       aria-labelledby="hero-heading"

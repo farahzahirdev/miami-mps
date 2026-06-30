@@ -1,3 +1,5 @@
+"use client";
+
 import {
   BadgeCheck,
   ClipboardCheck,
@@ -7,7 +9,7 @@ import {
   ShieldCheck,
   type LucideIcon,
 } from "lucide-react";
-import { copy } from "@/content/en";
+import { useLocale } from "@/context/LocaleProvider";
 import { Button } from "./Button";
 
 const iconMap: Record<string, LucideIcon> = {
@@ -20,6 +22,8 @@ const iconMap: Record<string, LucideIcon> = {
 };
 
 export function WhyChoose() {
+  const { copy } = useLocale();
+
   return (
     <section
       id="why-us"

@@ -1,11 +1,15 @@
+"use client";
+
 import Image from "next/image";
 import { CheckCircle2 } from "lucide-react";
-import { copy, site } from "@/content/en";
+import { useLocale } from "@/context/LocaleProvider";
 import { InquiryForm } from "./InquiryForm";
 import { Button } from "./Button";
 import { FaqList } from "./FaqList";
 
 export function About() {
+  const { copy } = useLocale();
+
   return (
     <section id="about" aria-labelledby="about-heading" className="scroll-mt-24 bg-mps-blue-light/40 py-16 sm:py-20">
       <div className="mx-auto max-w-content px-4 sm:px-6 lg:px-8">
@@ -13,7 +17,7 @@ export function About() {
           <div className="overflow-hidden rounded-2xl bg-black shadow-xl">
             <Image
               src="/images/about-clinic.png"
-              alt="Miami Psychiatric Services clinic"
+              alt={copy.media.aboutClinicAlt}
               width={700}
               height={500}
               className="h-auto w-full object-contain"
@@ -49,6 +53,8 @@ export function About() {
 }
 
 export function HowItWorks() {
+  const { copy } = useLocale();
+
   return (
     <section id="how-it-works" aria-labelledby="process-heading" className="scroll-mt-24 py-16 sm:py-20">
       <div className="mx-auto max-w-content px-4 sm:px-6 lg:px-8">
@@ -88,6 +94,8 @@ export function HowItWorks() {
 }
 
 export function MeetDoctor() {
+  const { copy } = useLocale();
+
   return (
     <section
       id="doctor"
@@ -100,7 +108,7 @@ export function MeetDoctor() {
             <div className="overflow-hidden rounded-2xl shadow-xl shadow-mps-blue/10">
               <Image
                 src="/images/dr-myuna-ruiz.png"
-                alt="Professional headshot of Dr. Myuna Ruiz, MD"
+                alt={copy.doctor.imageAlt}
                 width={500}
                 height={700}
                 className="h-auto w-full object-cover object-top"
@@ -132,6 +140,8 @@ export function MeetDoctor() {
 }
 
 export function Reviews() {
+  const { copy } = useLocale();
+
   return (
     <section id="reviews" aria-labelledby="reviews-heading" className="scroll-mt-24 bg-mps-blue-light/50 py-16 sm:py-20">
       <div className="mx-auto max-w-content px-4 sm:px-6 lg:px-8">
@@ -165,6 +175,8 @@ export function Reviews() {
 }
 
 export function FAQ() {
+  const { copy } = useLocale();
+
   return (
     <section id="faq" aria-labelledby="faq-heading" className="scroll-mt-24 py-16 sm:py-20">
       <div className="mx-auto max-w-content px-4 sm:px-6 lg:px-8">
@@ -182,6 +194,8 @@ export function FAQ() {
 }
 
 export function Contact() {
+  const { copy, site } = useLocale();
+
   return (
     <section
       id="contact"
@@ -201,7 +215,7 @@ export function Contact() {
 
             <dl className="mt-8 space-y-4">
               <div>
-                <dt className="section-eyebrow">Phone</dt>
+                <dt className="section-eyebrow">{copy.contact.phoneLabel}</dt>
                 <dd className="mt-1">
                   <a
                     href={site.phoneHref}
@@ -212,18 +226,18 @@ export function Contact() {
                 </dd>
               </div>
               <div>
-                <dt className="section-eyebrow">Address</dt>
+                <dt className="section-eyebrow">{copy.contact.addressLabel}</dt>
                 <dd className="mt-1 text-mps-navy/80">{site.address}</dd>
               </div>
               <div>
-                <dt className="section-eyebrow">Hours</dt>
+                <dt className="section-eyebrow">{copy.contact.hoursLabel}</dt>
                 <dd className="mt-1 text-mps-navy/80">{copy.contact.hours}</dd>
               </div>
             </dl>
 
             <div className="mt-8 overflow-hidden rounded-2xl shadow-lg">
               <iframe
-                title="Miami Psychiatric Services location map"
+                title={copy.contact.mapTitle}
                 src="https://maps.google.com/maps?q=7100+SW+99th+Ave+Suite+203+Miami+FL+33173&output=embed"
                 className="min-h-56 w-full border-0"
                 loading="lazy"

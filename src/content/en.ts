@@ -1,17 +1,6 @@
 /**
  * All user-facing copy for the English landing page.
- * Export COPY-FOR-TRANSLATION.md for Spanish translation.
  */
-export const site = {
-  name: "Miami Psychiatric Services",
-  logo: "/images/LOGO.webp",
-  phone: "(754) 289-4005",
-  phoneHref: "tel:+17542894005",
-  address: "7100 SW 99th Ave, Suite 203, Miami, FL 33173",
-  website: "https://www.mps-miami.com",
-  email: "info@mps-miami.com",
-} as const;
-
 export const copy = {
   skipLink: "Skip to main content",
   header: {
@@ -23,6 +12,7 @@ export const copy = {
       contact: "Contact",
     },
     callCta: "Call Now",
+    languageLabel: "Language",
   },
   hero: {
     eyebrow: "TMS & Spravato® in Miami",
@@ -38,10 +28,6 @@ export const copy = {
     callCta: "Call Now",
     callPrompt: "Prefer to call?",
     formCta: "Request a Free Consultation",
-    formTitle: "Start Your Journey Today",
-    formSubtitle:
-      "Complete the form below and our team will contact you within one business day.",
-    tmsImageAlt: "Transcranial Magnetic Stimulation (TMS) treatment illustration",
     emergencyNote:
       "Please note that we are not an emergency center. In case of an emergency, please call 911.",
   },
@@ -96,6 +82,18 @@ export const copy = {
     cta: "Learn If TMS Is Right for You",
     idealFor:
       "TMS may be right for you if you have tried multiple antidepressants without adequate improvement, or if medication side effects have been difficult to tolerate.",
+    images: [
+      {
+        src: "/images/tms.png",
+        alt: "Transcranial Magnetic Stimulation (TMS) illustration",
+        className: "bg-white",
+      },
+      {
+        src: "/images/tms-equipment.png",
+        alt: "TMS treatment equipment at Miami Psychiatric Services",
+        className: "bg-white",
+      },
+    ],
   },
   spravato: {
     eyebrow: "Spravato® Treatment",
@@ -129,6 +127,18 @@ export const copy = {
       "Spravato® may cause sedation, dissociation, and other side effects. Because of the risk of serious adverse outcomes from sedation and dissociation, patients must be monitored for at least two hours after each treatment. See full prescribing information and boxed warning.",
     idealFor:
       "Spravato® may be considered when traditional antidepressants have not provided adequate relief, as determined by your psychiatrist.",
+    images: [
+      {
+        src: "/images/spravato.png",
+        alt: "Spravato (esketamine) nasal spray treatment",
+        className: "bg-white",
+      },
+      {
+        src: "/images/spravato-product.png",
+        alt: "Spravato (esketamine) nasal spray treatment kits",
+        className: "bg-black",
+      },
+    ],
   },
   howItWorks: {
     eyebrow: "Treatment Process",
@@ -170,6 +180,7 @@ export const copy = {
     trustCopy:
       "Known for her patient-centered approach, Dr. Ruiz takes time to listen, explain treatment options thoroughly, and develop individualized care plans — including advanced therapies like TMS and Spravato® for patients who need more than medication alone.",
     cta: "Schedule a Consultation with Dr. Ruiz",
+    imageAlt: "Professional headshot of Dr. Myuna Ruiz, MD",
   },
   whyChoose: {
     eyebrow: "Why Choose Us",
@@ -285,33 +296,17 @@ export const copy = {
     headline: "Ready to Take the Next Step?",
     description:
       "Whether you are exploring TMS, Spravato®, or simply want to learn more about advanced depression treatment, our team is here to help. Call us today or complete the form below.",
+    phoneLabel: "Phone",
+    addressLabel: "Address",
+    hoursLabel: "Hours",
     hours: "Monday – Friday: 9:00 AM – 5:00 PM",
-    form: {
-      firstName: "First Name",
-      lastName: "Last Name",
-      phone: "Phone Number",
-      email: "Email Address",
-      interest: "I'm interested in",
-      interestOptions: [
-        "TMS Therapy",
-        "Spravato® Treatment",
-        "Both TMS & Spravato®",
-        "Not sure — I'd like to learn more",
-      ],
-      message: "Message (optional)",
-      messagePlaceholder:
-        "Tell us a little about your situation or any questions you have…",
-      submit: "Submit Inquiry",
-      submitting: "Sending…",
-      success:
-        "Thank you! Our team will contact you within one business day.",
-      privacy:
-        "Your information is kept confidential and used only to respond to your inquiry.",
-    },
+    mapTitle: "Miami Psychiatric Services location map",
   },
   footer: {
     tagline:
       "Our commitment is to provide high-quality medical care in a professional and caring environment.",
+    contactHeading: "Contact",
+    quickLinksHeading: "Quick Links",
     rights: "All rights reserved.",
     disclaimer:
       "This page is for informational purposes only and does not constitute medical advice. Spravato® is a registered trademark of Janssen Pharmaceuticals, Inc.",
@@ -322,6 +317,9 @@ export const copy = {
     call: "Call",
     form: "Inquire",
   },
+  media: {
+    aboutClinicAlt: "Miami Psychiatric Services clinic",
+  },
 } as const;
 
-export type Copy = typeof copy;
+export type EnCopy = typeof copy;

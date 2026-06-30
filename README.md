@@ -39,7 +39,7 @@ The header, footer, and Open Graph metadata all reference this file. Recommended
 
 ## Bilingual Design
 
-Copy lives in `src/content/en.ts`. When Spanish copy is ready, add `src/content/es.ts` with the same structure and swap the import. Layout uses flexible text containers and `text-wrap: balance` for longer Spanish strings.
+Copy lives in `src/content/en.ts` and `src/content/es.ts`. The navbar **EN / ES** switcher toggles language (preference saved in the browser). The inquiry form is embedded from GoHighLevel and remains in English until a Spanish form is configured in GHL.
 
 ## Form Integration
 

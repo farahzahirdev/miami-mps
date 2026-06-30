@@ -1,20 +1,25 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Image from "next/image";
 import { Menu, Phone, X } from "lucide-react";
-import { copy, site } from "@/content/en";
-
-const navLinks = [
-  { href: "#tms", label: copy.header.nav.tms },
-  { href: "#spravato", label: copy.header.nav.spravato },
-  { href: "#about", label: copy.header.nav.about },
-  { href: "#why-us", label: copy.header.nav.whyUs },
-  { href: "#contact", label: copy.header.nav.contact },
-];
+import { useLocale } from "@/context/LocaleProvider";
+import { LanguageSwitcher } from "./LanguageSwitcher";
 
 export function Header() {
+  const { copy, site } = useLocale();
   const [open, setOpen] = useState(false);
+
+  const navLinks = useMemo(
+    () => [
+      { href: "#tms", label: copy.header.nav.tms },
+      { href: "#spravato", label: copy.header.nav.spravato },
+      { href: "#about", label: copy.header.nav.about },
+      { href: "#why-us", label: copy.header.nav.whyUs },
+      { href: "#contact", label: copy.header.nav.contact },
+    ],
+    [copy],
+  );
 
   useEffect(() => {
     if (!open) return;
@@ -37,7 +42,7 @@ export function Header() {
   return (
     <>
       <header className="sticky top-0 z-50 border-b border-mps-blue/10 bg-white/95 backdrop-blur-md">
-        <div className="mx-auto flex max-w-content items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
+        <div className="mx-auto flex max-w-content items-center justify-between gap-3 px-4 py-3 sm:px-6 lg:gap-4 lg:px-8">
           <a href="#" className="flex shrink-0 items-center" aria-label={`${site.name} home`}>
             <Image
               src={site.logo}
@@ -49,7 +54,7 @@ export function Header() {
             />
           </a>
 
-          <nav className="hidden items-center gap-6 lg:flex" aria-label="Main navigation">
+          <nav className="hidden items-center gap-5 lg:flex" aria-label="Main navigation">
             {navLinks.map((link) => (
               <a
                 key={link.href}
@@ -62,12 +67,15 @@ export function Header() {
           </nav>
 
           <div className="flex items-center gap-2 sm:gap-3">
+            <LanguageSwitcher />
+
             <a
               href={site.phoneHref}
               className="btn-primary inline-flex items-center gap-2 !px-4 !py-3 sm:!px-5 sm:!py-3"
             >
               <Phone className="h-4 w-4 shrink-0" aria-hidden />
-              {copy.header.callCta}
+              <span className="hidden sm:inline">{copy.header.callCta}</span>
+              <span className="sm:hidden">{copy.header.callCta}</span>
             </a>
 
             <button
@@ -116,6 +124,10 @@ export function Header() {
           >
             <X className="h-6 w-6" />
           </button>
+        </div>
+
+        <div className="border-b border-mps-blue/10 px-5 py-4">
+          <LanguageSwitcher fullWidth />
         </div>
 
         <ul className="flex flex-1 flex-col gap-1 overflow-y-auto px-4 py-6">
