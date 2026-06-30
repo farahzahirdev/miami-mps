@@ -59,8 +59,6 @@
 | bullet 4 | Serving Miami's Spanish-speaking community |
 | callPrompt | Prefer to call? |
 | formCta | Request a Free Consultation |
-| formTitle | Start Your Journey Today |
-| formSubtitle | Complete the form below and our team will contact you within one business day. |
 | emergencyNote | Please note that we are not an emergency center. In case of an emergency, please call 911. |
 
 ---
@@ -264,25 +262,7 @@ Start your personalized treatment plan in our welcoming Miami clinic with ongoin
 | description | Whether you are exploring TMS, Spravato®, or simply want to learn more about advanced depression treatment, our team is here to help. Call us today or complete the form below. |
 | hours | Monday – Friday: 9:00 AM – 5:00 PM |
 
-### Inquiry Form
-
-| Field | English |
-|-------|---------|
-| firstName | First Name |
-| lastName | Last Name |
-| phone | Phone Number |
-| email | Email Address |
-| interest | I'm interested in |
-| interest option 1 | TMS Therapy |
-| interest option 2 | Spravato® Treatment |
-| interest option 3 | Both TMS & Spravato® |
-| interest option 4 | Not sure — I'd like to learn more |
-| message | Message (optional) |
-| messagePlaceholder | Tell us a little about your situation or any questions you have… |
-| submit | Submit Inquiry |
-| submitting | Sending… |
-| success | Thank you! Our team will contact you within one business day. |
-| privacy | Your information is kept confidential and used only to respond to your inquiry. |
+> **Note:** The inquiry form is embedded from GoHighLevel. Form field labels are managed in GHL, not in this landing page copy file.
 
 ---
 

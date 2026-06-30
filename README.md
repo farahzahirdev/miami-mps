@@ -29,7 +29,8 @@ The header, footer, and Open Graph metadata all reference this file. Recommended
 | `src/content/en.ts` | All English copy (translation-ready) |
 | `src/components/` | Page sections and inquiry form |
 | `public/images/` | Logo, TMS, Spravato, team, and clinic photos |
-| `COPY-FOR-TRANSLATION.md` | Full copy export for Spanish translation |
+| `COPY-FOR-TRANSLATION.md` | Developer copy export (section keys for `es.ts`) |
+| `English-Copy-for-Spanish-Translation.md` | **Client-facing** doc to share for Spanish translation |
 
 ## CTAs
 
