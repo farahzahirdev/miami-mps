@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { MapPin, Phone } from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
 import { useLocale } from "@/context/LocaleProvider";
 
 const quickLinks = [
@@ -46,6 +46,17 @@ export function Footer() {
                     <Phone className="h-4 w-4" aria-hidden />
                   </span>
                   {site.phone}
+                </a>
+              </li>
+              <li>
+                <a
+                  href={site.emailHref}
+                  className="group flex items-center gap-3 text-sm font-medium text-mps-navy transition hover:text-mps-blue"
+                >
+                  <span className="mps-icon-badge p-2.5 transition group-hover:ring-mps-blue/20">
+                    <Mail className="h-4 w-4" aria-hidden />
+                  </span>
+                  {site.email}
                 </a>
               </li>
               <li className="flex items-start gap-3 text-sm text-mps-navy/85">

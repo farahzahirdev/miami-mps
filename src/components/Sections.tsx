@@ -244,7 +244,7 @@ export function Contact() {
             <div className="mps-card overflow-hidden">
               <iframe
                 title={copy.contact.mapTitle}
-                src="https://maps.google.com/maps?q=7100+SW+99th+Ave+Suite+203+Miami+FL+33173&output=embed"
+                src="https://maps.google.com/maps?q=12260+SW+8th+St+Ste+154+Miami+FL+33184&output=embed"
                 className="min-h-64 w-full border-0"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"

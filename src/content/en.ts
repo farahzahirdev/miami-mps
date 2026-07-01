@@ -210,7 +210,7 @@ export const copy = {
         icon: "map",
         title: "Convenient Kendall Location",
         description:
-          "Visit our welcoming clinic at 7100 SW 99th Ave — short wait times and a clean, professional setting.",
+          "Visit our welcoming clinic at 12260 SW 8th St — short wait times and a clean, professional setting.",
       },
       {
         icon: "heart",
@@ -285,7 +285,7 @@ export const copy = {
       {
         question: "Where is your clinic located?",
         answer:
-          "We are located at 7100 SW 99th Ave, Suite 203, Miami, FL 33173 — conveniently accessible from Kendall and surrounding Miami-Dade neighborhoods.",
+          "We are located at 12260 SW 8th St, Ste 154, Miami, FL 33184 — conveniently accessible from Miami-Dade neighborhoods.",
       },
     ],
     cta: "Still Have Questions? Contact Us",
@@ -311,8 +311,9 @@ export const copy = {
     formSubtext: "Complete the form and our team will contact you shortly.",
     phoneLabel: "Phone",
     addressLabel: "Address",
+    emailLabel: "Email",
     hoursLabel: "Hours",
-    hours: "Monday – Friday: 9:00 AM – 5:00 PM",
+    hours: "Monday – Thursday: 9:00 AM – 4:00 PM · Friday: 9:00 AM – 3:00 PM",
     mapTitle: "Miami Psychiatric Services location map",
   },
   footer: {
