@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { CheckCircle2 } from "lucide-react";
+import { BadgeCheck, CheckCircle2, Star } from "lucide-react";
 import { useLocale } from "@/context/LocaleProvider";
 import { InquiryForm } from "./InquiryForm";
 import { Button } from "./Button";
@@ -11,40 +11,40 @@ export function About() {
   const { copy } = useLocale();
 
   return (
-    <section id="about" aria-labelledby="about-heading" className="scroll-mt-24 bg-mps-blue-light/40 py-16 sm:py-20">
+    <section id="about" aria-labelledby="about-heading" className="mps-section bg-white">
       <div className="mx-auto max-w-content px-4 sm:px-6 lg:px-8">
-        <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
-          <div className="overflow-hidden rounded-2xl bg-black shadow-xl">
+        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
+          <div className="mps-fade-up mps-image-wrap">
             <Image
-              src="/images/about-clinic.png"
+              src="/images/about-team.webp"
               alt={copy.media.aboutClinicAlt}
-              width={700}
-              height={500}
-              className="h-auto w-full object-contain"
+              width={960}
+              height={680}
+              quality={90}
+              className="aspect-[24/17] w-full object-cover object-[center_42%]"
+              sizes="(max-width: 1024px) 100vw, 675px"
             />
           </div>
 
-          <div>
-            <p className="section-eyebrow mb-3">{copy.about.eyebrow}</p>
-            <h2 id="about-heading" className="text-mps-navy">
-              {copy.about.headline}
-            </h2>
-            <p className="mt-4 text-mps-navy/80">{copy.about.description}</p>
+          <div className="mps-fade-up space-y-6" style={{ animationDelay: "80ms" }}>
+            <div>
+              <p className="section-eyebrow mb-3">{copy.about.eyebrow}</p>
+              <h2 id="about-heading">{copy.about.headline}</h2>
+              <p className="text-lead mt-4">{copy.about.description}</p>
+            </div>
 
-            <ul className="mt-6 space-y-3">
+            <ul className="space-y-3.5">
               {copy.about.points.map((point) => (
-                <li key={point} className="flex items-start gap-3 text-mps-navy/85">
-                  <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-mps-blue" aria-hidden />
+                <li key={point} className="flex items-start gap-3 text-mps-body text-mps-navy/90">
+                  <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-mps-green" aria-hidden />
                   <span>{point}</span>
                 </li>
               ))}
             </ul>
 
-            <div className="mt-8">
-              <Button href="#contact-inquiry" variant="primary">
-                {copy.about.cta}
-              </Button>
-            </div>
+            <Button href="#contact-inquiry" variant="primary">
+              {copy.about.cta}
+            </Button>
           </div>
         </div>
       </div>
@@ -56,34 +56,31 @@ export function HowItWorks() {
   const { copy } = useLocale();
 
   return (
-    <section id="how-it-works" aria-labelledby="process-heading" className="scroll-mt-24 py-16 sm:py-20">
+    <section id="how-it-works" aria-labelledby="process-heading" className="mps-section bg-white">
       <div className="mx-auto max-w-content px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl text-center">
-          <p className="section-eyebrow mb-3">{copy.howItWorks.eyebrow}</p>
-          <h2 id="process-heading" className="text-mps-navy">
+        <div className="mps-section-header">
+          <p className="section-eyebrow">{copy.howItWorks.eyebrow}</p>
+          <h2 id="process-heading" className="mt-3">
             {copy.howItWorks.headline}
           </h2>
         </div>
 
-        <ol className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <ol className="mps-section-body grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {copy.howItWorks.steps.map((step) => (
-            <li
-              key={step.step}
-              className="list-none rounded-2xl border border-mps-blue/10 bg-white p-6 shadow-sm transition hover:shadow-md"
-            >
+            <li key={step.step} className="mps-card-interactive list-none p-6">
               <span
-                className="btn-font inline-flex h-10 w-10 items-center justify-center rounded-full bg-mps-accent text-mps-accent-dark"
+                className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-mps-navy text-sm font-bold text-white"
                 aria-hidden
               >
                 {step.step}
               </span>
-              <h3 className="mt-4 text-mps-navy">{step.title}</h3>
-              <p className="text-small mt-2 text-mps-navy/70">{step.description}</p>
+              <h3 className="mt-5 text-lg font-semibold">{step.title}</h3>
+              <p className="text-small mt-2">{step.description}</p>
             </li>
           ))}
         </ol>
 
-        <div className="mt-10 text-center">
+        <div className="mt-12 text-center">
           <Button href="#contact-inquiry" variant="primary">
             {copy.howItWorks.cta}
           </Button>
@@ -97,41 +94,49 @@ export function MeetDoctor() {
   const { copy } = useLocale();
 
   return (
-    <section
-      id="doctor"
-      aria-labelledby="doctor-heading"
-      className="scroll-mt-24 bg-white py-16 sm:py-20"
-    >
+    <section id="doctor" aria-labelledby="doctor-heading" className="mps-section mps-section-alt">
       <div className="mx-auto max-w-content px-4 sm:px-6 lg:px-8">
-        <div className="grid items-start gap-10 lg:grid-cols-2 lg:gap-16">
-          <div className="mx-auto w-full max-w-md lg:max-w-none">
-            <div className="overflow-hidden rounded-2xl shadow-xl shadow-mps-blue/10">
-              <Image
-                src="/images/dr-myuna-ruiz.png"
-                alt={copy.doctor.imageAlt}
-                width={500}
-                height={700}
-                className="h-auto w-full object-cover object-top"
-              />
+        <div className="grid items-start gap-12 lg:grid-cols-2 lg:gap-20">
+          <div className="mps-fade-up mx-auto w-full max-w-md lg:max-w-none">
+            <div className="relative">
+              <div className="mps-image-blob" aria-hidden />
+              <div className="mps-image-wrap relative">
+                <Image
+                  src="/images/dr-myuna-ruiz.png"
+                  alt={copy.doctor.imageAlt}
+                  width={401}
+                  height={601}
+                  quality={90}
+                  className="aspect-[4/5] w-full object-cover object-top"
+                  sizes="(max-width: 1024px) 100vw, 540px"
+                />
+              </div>
             </div>
           </div>
 
-          <div>
-            <p className="section-eyebrow mb-3">{copy.doctor.eyebrow}</p>
-            <h2 id="doctor-heading" className="text-mps-navy">
-              {copy.doctor.headline}
-            </h2>
-            <p className="mt-2 font-heading text-mps-h3 text-mps-blue">{copy.doctor.name}</p>
-            <p className="text-small mt-1 text-mps-navy/70">{copy.doctor.credentials}</p>
-
-            <p className="mt-6 leading-relaxed text-mps-navy/80">{copy.doctor.bio}</p>
-            <p className="mt-4 leading-relaxed text-mps-navy/75">{copy.doctor.trustCopy}</p>
-
-            <div className="mt-8">
-              <Button href="#contact-inquiry" variant="primary">
-                {copy.doctor.cta}
-              </Button>
+          <div className="mps-fade-up space-y-6" style={{ animationDelay: "80ms" }}>
+            <div>
+              <p className="section-eyebrow mb-3">{copy.doctor.eyebrow}</p>
+              <h2 id="doctor-heading">{copy.doctor.headline}</h2>
+              <p className="mt-3 text-xl font-semibold text-mps-blue">{copy.doctor.name}</p>
+              <p className="text-small mt-1">{copy.doctor.credentials}</p>
             </div>
+
+            <div className="flex flex-wrap gap-2.5">
+              {copy.doctor.badges.map((badge) => (
+                <span key={badge} className="mps-chip">
+                  <BadgeCheck className="h-3.5 w-3.5 shrink-0 text-mps-green" aria-hidden />
+                  {badge}
+                </span>
+              ))}
+            </div>
+
+            <p className="text-mps-body leading-relaxed text-mps-navy/85">{copy.doctor.bio}</p>
+            <p className="text-mps-body leading-relaxed text-mps-slate">{copy.doctor.trustCopy}</p>
+
+            <Button href="#contact-inquiry" variant="primary">
+              {copy.doctor.cta}
+            </Button>
           </div>
         </div>
       </div>
@@ -143,28 +148,32 @@ export function Reviews() {
   const { copy } = useLocale();
 
   return (
-    <section id="reviews" aria-labelledby="reviews-heading" className="scroll-mt-24 bg-mps-blue-light/50 py-16 sm:py-20">
+    <section id="reviews" aria-labelledby="reviews-heading" className="mps-section bg-white">
       <div className="mx-auto max-w-content px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl text-center">
-          <p className="section-eyebrow mb-3">{copy.reviews.eyebrow}</p>
-          <h2 id="reviews-heading" className="text-mps-navy">
+        <div className="mps-section-header">
+          <p className="section-eyebrow">{copy.reviews.eyebrow}</p>
+          <h2 id="reviews-heading" className="mt-3">
             {copy.reviews.headline}
           </h2>
         </div>
 
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mps-section-body grid gap-6 sm:grid-cols-2">
           {copy.reviews.items.map((review) => (
-            <blockquote
-              key={review.author}
-              className="rounded-2xl border border-mps-blue/10 bg-white p-6 shadow-sm"
-            >
-              <p className="leading-relaxed text-mps-navy/85">&ldquo;{review.quote}&rdquo;</p>
-              <footer className="section-eyebrow mt-4">— {review.author}</footer>
+            <blockquote key={review.author} className="mps-card-interactive flex h-full flex-col p-8">
+              <div className="flex items-center gap-1 text-amber-400" aria-label="5 out of 5 stars">
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <Star key={i} className="h-4 w-4 fill-current" aria-hidden />
+                ))}
+              </div>
+              <p className="mt-5 flex-1 leading-relaxed text-mps-navy/85">&ldquo;{review.quote}&rdquo;</p>
+              <footer className="mt-6 border-t border-mps-navy/8 pt-5">
+                <cite className="text-sm font-semibold not-italic text-mps-navy">{review.author}</cite>
+              </footer>
             </blockquote>
           ))}
         </div>
 
-        <div className="mt-10 text-center">
+        <div className="mt-12 text-center">
           <Button href="#contact-inquiry" variant="primary">
             {copy.reviews.cta}
           </Button>
@@ -178,16 +187,20 @@ export function FAQ() {
   const { copy } = useLocale();
 
   return (
-    <section id="faq" aria-labelledby="faq-heading" className="scroll-mt-24 py-16 sm:py-20">
+    <section id="faq" aria-labelledby="faq-heading" className="mps-section mps-section-alt">
       <div className="mx-auto max-w-content px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl text-center">
-          <p className="section-eyebrow mb-3">{copy.faq.eyebrow}</p>
-          <h2 id="faq-heading" className="text-mps-navy">
+        <div className="mps-section-header">
+          <p className="section-eyebrow">{copy.faq.eyebrow}</p>
+          <h2 id="faq-heading" className="mt-3">
             {copy.faq.headline}
           </h2>
         </div>
 
-        <FaqList />
+        <div className="mps-section-body mx-auto max-w-3xl">
+          <div className="mps-card px-8 py-8 sm:px-10 sm:py-10">
+            <FaqList />
+          </div>
+        </div>
       </div>
     </section>
   );
@@ -197,29 +210,23 @@ export function Contact() {
   const { copy, site } = useLocale();
 
   return (
-    <section
-      id="contact"
-      aria-labelledby="contact-heading"
-      className="scroll-mt-24 bg-gradient-to-b from-mps-blue-light/50 to-white py-16 sm:py-20"
-    >
+    <section id="contact" aria-labelledby="contact-heading" className="mps-section bg-white">
       <div className="mx-auto max-w-content px-4 sm:px-6 lg:px-8">
-        <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
-          <div>
-            <p className="section-eyebrow mb-3">{copy.contact.eyebrow}</p>
-            <h2 id="contact-heading" className="text-mps-navy">
-              {copy.contact.headline}
-            </h2>
-            <p className="text-lead mt-4 text-mps-navy/80">
-              {copy.contact.description}
-            </p>
+        <div className="grid gap-12 lg:grid-cols-[1fr_1.1fr] lg:gap-16">
+          <div className="space-y-8">
+            <div>
+              <p className="section-eyebrow mb-3">{copy.contact.eyebrow}</p>
+              <h2 id="contact-heading">{copy.contact.headline}</h2>
+              <p className="text-lead mt-4">{copy.contact.description}</p>
+            </div>
 
-            <dl className="mt-8 space-y-4">
+            <dl className="space-y-5">
               <div>
                 <dt className="section-eyebrow">{copy.contact.phoneLabel}</dt>
-                <dd className="mt-1">
+                <dd className="mt-2">
                   <a
                     href={site.phoneHref}
-                    className="font-heading text-mps-h3 text-mps-navy hover:text-mps-blue focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-mps-blue"
+                    className="text-2xl font-semibold text-mps-navy transition hover:text-mps-blue"
                   >
                     {site.phone}
                   </a>
@@ -227,27 +234,31 @@ export function Contact() {
               </div>
               <div>
                 <dt className="section-eyebrow">{copy.contact.addressLabel}</dt>
-                <dd className="mt-1 text-mps-navy/80">{site.address}</dd>
+                <dd className="text-small mt-2 text-mps-navy/85">{site.address}</dd>
               </div>
               <div>
                 <dt className="section-eyebrow">{copy.contact.hoursLabel}</dt>
-                <dd className="mt-1 text-mps-navy/80">{copy.contact.hours}</dd>
+                <dd className="text-small mt-2 text-mps-navy/85">{copy.contact.hours}</dd>
               </div>
             </dl>
 
-            <div className="mt-8 overflow-hidden rounded-2xl shadow-lg">
+            <div className="mps-card overflow-hidden">
               <iframe
                 title={copy.contact.mapTitle}
                 src="https://maps.google.com/maps?q=7100+SW+99th+Ave+Suite+203+Miami+FL+33173&output=embed"
-                className="min-h-56 w-full border-0"
+                className="min-h-64 w-full border-0"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
               />
             </div>
           </div>
 
-          <div>
-            <InquiryForm id="contact-inquiry" />
+          <div className="mps-float-card shadow-float">
+            <div className="border-b border-mps-navy/8 bg-mps-blue-light/40 px-6 py-5 sm:px-8 sm:py-6">
+              <h3 className="text-xl font-semibold text-mps-navy">{copy.contact.formTitle}</h3>
+              <p className="text-small mt-1">{copy.contact.formSubtext}</p>
+            </div>
+            <InquiryForm id="contact-inquiry" embedded />
           </div>
         </div>
       </div>

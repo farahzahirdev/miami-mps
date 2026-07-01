@@ -1,6 +1,7 @@
 "use client";
 
 import { useId, useState } from "react";
+import { Plus } from "lucide-react";
 import { useLocale } from "@/context/LocaleProvider";
 import { Button } from "./Button";
 
@@ -9,22 +10,22 @@ function FaqItem({ question, answer }: { question: string; answer: string }) {
   const panelId = useId();
 
   return (
-    <div className="border-b border-mps-blue/10 py-5 last:border-b-0">
+    <div className="border-b border-mps-navy/10 py-5 last:border-b-0">
       <button
         type="button"
         aria-expanded={open}
         aria-controls={panelId}
         onClick={() => setOpen((prev) => !prev)}
-        className="flex w-full cursor-pointer items-center justify-between gap-4 text-left font-heading text-mps-h4 text-mps-navy transition-colors duration-300 hover:text-mps-blue"
+        className="flex w-full cursor-pointer items-center justify-between gap-4 text-left text-base font-semibold text-mps-navy transition-colors hover:text-mps-blue"
       >
         <span>{question}</span>
         <span
-          className={`shrink-0 text-mps-h3 text-mps-blue transition-transform duration-300 ease-in-out ${
-            open ? "rotate-45" : "rotate-0"
+          className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-mps-blue-light text-mps-blue transition-transform duration-300 ${
+            open ? "rotate-45" : ""
           }`}
           aria-hidden
         >
-          +
+          <Plus className="h-4 w-4" strokeWidth={2.5} />
         </span>
       </button>
       <div
@@ -34,7 +35,7 @@ function FaqItem({ question, answer }: { question: string; answer: string }) {
         }`}
       >
         <div className="overflow-hidden">
-          <p className="text-small pt-3 pr-8 text-mps-navy/75">{answer}</p>
+          <p className="text-small pt-3 pr-10">{answer}</p>
         </div>
       </div>
     </div>
@@ -46,13 +47,11 @@ export function FaqList() {
 
   return (
     <>
-      <div className="mx-auto mt-12 max-w-3xl">
-        {copy.faq.items.map((item) => (
-          <FaqItem key={item.question} question={item.question} answer={item.answer} />
-        ))}
-      </div>
+      {copy.faq.items.map((item) => (
+        <FaqItem key={item.question} question={item.question} answer={item.answer} />
+      ))}
 
-      <div className="mx-auto mt-10 max-w-3xl text-center">
+      <div className="pt-8 text-center">
         <Button href="#contact-inquiry" variant="secondary">
           {copy.faq.cta}
         </Button>

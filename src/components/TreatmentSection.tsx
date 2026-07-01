@@ -8,6 +8,9 @@ type TreatmentImage = {
   src: string;
   alt: string;
   className?: string;
+  fit?: "cover" | "contain";
+  width?: number;
+  height?: number;
 };
 
 type TreatmentSectionProps = {
@@ -25,62 +28,79 @@ export function TreatmentSection({
 }: TreatmentSectionProps) {
   const { copy } = useLocale();
   const data = variant === "tms" ? copy.tms : copy.spravato;
+  const image = images[0];
+  const useContain = image?.fit === "contain";
+  const imageWidth = image?.width ?? 900;
+  const imageHeight = image?.height ?? 675;
+  const isSquare = imageWidth === imageHeight;
 
   return (
-    <section id={id} className="scroll-mt-24 py-16 sm:py-20">
+    <section id={id} className="mps-section">
       <div className="mx-auto max-w-content px-4 sm:px-6 lg:px-8">
         <div
-          className={`grid items-center gap-10 lg:grid-cols-2 lg:gap-16 ${
+          className={`grid items-center gap-12 lg:grid-cols-2 lg:gap-20 ${
             reversed ? "lg:[&>*:first-child]:order-2" : ""
           }`}
         >
-          <div>
-            <p className="section-eyebrow mb-3">{data.eyebrow}</p>
-            <h2 className="text-mps-navy">{data.headline}</h2>
-            <p className="text-lead mt-4 text-mps-navy/80">{data.description}</p>
-            <p className="text-small mt-4 rounded-xl bg-mps-blue-light px-4 py-3 text-mps-navy/90">
+          <div className="mps-fade-up space-y-6">
+            <div>
+              <p className="section-eyebrow mb-3">{data.eyebrow}</p>
+              <h2>{data.headline}</h2>
+              <p className="text-lead mt-4">{data.description}</p>
+            </div>
+
+            <p className="text-small rounded-card border border-mps-navy/10 bg-mps-blue-light/80 px-5 py-4 text-mps-navy/90">
               {data.idealFor}
             </p>
 
-            <div className="mt-8 grid gap-4 sm:grid-cols-2">
+            <div className="grid gap-4 sm:grid-cols-2">
               {data.benefits.map((benefit) => (
-                <div
-                  key={benefit.title}
-                  className="rounded-xl border border-mps-blue/10 bg-white p-4 shadow-sm"
-                >
-                  <h3 className="font-heading text-mps-h4 text-mps-navy">{benefit.title}</h3>
-                  <p className="text-small mt-1 text-mps-navy/70">
-                    {benefit.description}
-                  </p>
+                <div key={benefit.title} className="mps-card-interactive p-5">
+                  <h3 className="text-base font-semibold text-mps-navy">{benefit.title}</h3>
+                  <p className="text-small mt-2">{benefit.description}</p>
                 </div>
               ))}
             </div>
 
-            <Button href="#contact-inquiry" variant="primary" className="mt-8">
+            <Button href="#contact-inquiry" variant="primary">
               {data.cta}
             </Button>
 
             {"disclaimer" in data && (
-              <p className="text-small mt-4 text-mps-navy/50">{data.disclaimer}</p>
+              <p className="text-small text-mps-slate/80">{data.disclaimer}</p>
             )}
           </div>
 
-          <div className="flex flex-col gap-4">
-            {images.map((image) => (
+          {image && (
+            <div className="mps-fade-up relative" style={{ animationDelay: "100ms" }}>
+              <div className="mps-image-blob" aria-hidden />
               <div
-                key={image.src}
-                className={`overflow-hidden rounded-2xl shadow-xl shadow-mps-blue/10 ${image.className ?? "bg-white"}`}
+                className={`mps-image-wrap relative ${image.className ?? ""} ${
+                  useContain ? "flex min-h-[18rem] items-center justify-center bg-white sm:min-h-[22rem]" : ""
+                }`}
               >
                 <Image
                   src={image.src}
                   alt={image.alt}
-                  width={750}
-                  height={750}
-                  className="h-auto w-full object-contain"
+                  width={imageWidth}
+                  height={imageHeight}
+                  quality={95}
+                  className={
+                    useContain
+                      ? "h-auto max-h-[20rem] w-full max-w-[26rem] object-contain"
+                      : isSquare
+                        ? "aspect-square w-full object-cover"
+                        : "aspect-[4/3] w-full object-cover"
+                  }
+                  sizes={
+                    useContain
+                      ? "(max-width: 1024px) 90vw, 420px"
+                      : "(max-width: 1024px) 100vw, 675px"
+                  }
                 />
               </div>
-            ))}
-          </div>
+            </div>
+          )}
         </div>
       </div>
     </section>

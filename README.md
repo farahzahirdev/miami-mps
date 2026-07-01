@@ -54,13 +54,27 @@ npm start
 
 ## Brand Colors
 
-| Token | Hex |
-|-------|-----|
-| Blue | `#014BB6` |
-| Navy | `#061281` |
-| Cyan accent | `#8AF6FF` |
-| Orange accent | `#D95511` |
+| Token | Hex | Usage |
+|-------|-----|--------|
+| Blue | `#49B2E9` | Primary buttons, links, accents |
+| Navy | `#232B75` | Headings, footer, secondary buttons |
+| Green | `#97C93E` | Subtle accents (icons, checkmarks) |
+
+Typography: **Plus Jakarta Sans** (Google Fonts).
 
 ## Assets
 
 Images were sourced from the client's Squarespace site. Replace or supplement as needed in `public/images/`.
+
+### Recommended export sizes (2× retina)
+
+| File | Target size | Aspect | Section |
+|------|-------------|--------|---------|
+| `hero-services.png` | **2560×1440** | 16:9 | Hero background |
+| `about-clinic.png` | **1600×1000** | 16:10 | About |
+| `tms.png` | **1200×1200** | ~1:1 | TMS (source is 402px — AI upscale needed) |
+| `spravato.png` | **1200×1200** | ~1:1 | Spravato (source is 402px — AI upscale needed) |
+| `dr-myuna-ruiz.png` | **1200×1600** | 4:5 | Doctor |
+| `LOGO.webp` | **640×256** | ~2.5:1 | Header/footer |
+
+Use PNG for illustrations, JPEG/WebP for photos (quality 85–90).

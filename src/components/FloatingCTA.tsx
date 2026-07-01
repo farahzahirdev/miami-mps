@@ -7,7 +7,7 @@ export function FloatingCTA() {
   const { copy, site } = useLocale();
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-40 border-t border-mps-blue/10 bg-white/95 p-3 shadow-[0_-4px_20px_rgba(6,18,129,0.1)] backdrop-blur-md sm:hidden">
+    <div className="fixed bottom-0 left-0 right-0 z-40 border-t border-mps-navy/10 bg-white/95 p-3 shadow-[0_-8px_30px_rgba(35,43,117,0.1)] backdrop-blur-lg sm:hidden">
       <div className="flex gap-2">
         <a
           href={site.phoneHref}

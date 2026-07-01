@@ -20,22 +20,32 @@ export function InquiryForm({
   embedded = false,
 }: InquiryFormProps) {
   const iframeId = `inline-${GHL_FORM_ID}${id === "hero-inquiry" ? "" : `-${id}`}`;
-  const padding = compact ? "p-5 sm:p-6" : "p-6 sm:p-8";
+  const padding = compact ? "p-4 sm:p-5" : "p-5 sm:p-6 lg:p-7";
+  const isContact = id === "contact-inquiry";
+  const isHero = id === "hero-inquiry";
   const shellClasses = embedded
     ? padding
-    : `${id === "contact-inquiry" ? "scroll-mt-24 " : ""}overflow-hidden rounded-2xl border border-mps-blue/10 bg-white shadow-xl shadow-mps-blue/5 ${padding}`;
+    : `${isContact ? "scroll-mt-24 " : ""}mps-card overflow-hidden shadow-card-hover ${padding}`;
 
   return (
     <div id={id} className={shellClasses}>
-      <div className="min-h-[32rem] w-full">
+      <div
+        className={`w-full ${
+          compact
+            ? isHero
+              ? "min-h-[24rem] sm:min-h-[26rem]"
+              : "min-h-[28rem] sm:min-h-[32rem]"
+            : "min-h-[32rem] sm:min-h-[40rem] lg:min-h-[42rem]"
+        }`}
+      >
         <iframe
           src={GHL_FORM_SRC}
           style={{
             width: "100%",
             height: "100%",
             border: "none",
-            borderRadius: "4px",
-            minHeight: compact ? "28rem" : "42rem",
+            borderRadius: "12px",
+            minHeight: compact ? (isHero ? "24rem" : "28rem") : isContact ? "42rem" : "40rem",
           }}
           id={iframeId}
           data-layout='{"id":"INLINE"}'

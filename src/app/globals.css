@@ -3,26 +3,12 @@
 @import "tailwindcss/utilities";
 
 :root {
-  --mps-blue: #014bb6;
-  --mps-navy: #061281;
-  --mps-cyan: #8af6ff;
-  --mps-accent: #4cf957;
-  --mps-accent-dark: #173619;
-
-  /* mps-miami.com Squarespace typography tokens */
-  --mps-heading-font: Georgia, "Times New Roman", serif;
-  --mps-body-font: "Times New Roman", Times, serif;
-  --mps-heading-weight: 400;
-  --mps-body-weight: 400;
-  --mps-heading-letter-spacing: 0.02em;
-  --mps-body-letter-spacing: 0em;
-  --mps-heading-line-height: 1.4;
-  --mps-body-line-height: 1.8;
-  --mps-button-letter-spacing: 0.04em;
-  --mps-button-line-height: 1.2;
-  --mps-button-padding: 1.2rem;
-  --mps-button-radius: 16px 0;
-  --mps-content-max: 1400px;
+  --mps-blue: #49b2e9;
+  --mps-blue-dark: #2e9fd4;
+  --mps-navy: #232b75;
+  --mps-green: #97c93e;
+  --mps-green-dark: #7aad32;
+  --mps-content-max: 1350px;
 }
 
 html {
@@ -31,22 +17,14 @@ html {
 
 @layer base {
   body {
-    @apply bg-white text-mps-navy antialiased;
-    font-family: var(--mps-body-font);
-    font-size: 1.2rem;
-    line-height: var(--mps-body-line-height);
-    font-weight: var(--mps-body-weight);
-    letter-spacing: var(--mps-body-letter-spacing);
+    @apply bg-white font-body text-mps-body text-mps-navy antialiased;
   }
 
   h1,
   h2,
   h3,
   h4 {
-    font-family: var(--mps-heading-font);
-    font-weight: var(--mps-heading-weight);
-    letter-spacing: var(--mps-heading-letter-spacing);
-    text-transform: none;
+    @apply font-heading font-semibold text-mps-navy;
   }
 
   h1 {
@@ -64,79 +42,115 @@ html {
   h4 {
     @apply text-mps-h4;
   }
-
-  p,
-  li {
-    line-height: var(--mps-body-line-height);
-  }
 }
 
 @layer components {
   .section-eyebrow {
-    @apply text-mps-h4 font-normal text-mps-blue;
-    font-family: var(--mps-heading-font);
-    letter-spacing: var(--mps-heading-letter-spacing);
+    @apply text-mps-h4 font-semibold uppercase tracking-[0.12em] text-mps-blue;
   }
 
   .text-lead {
-    @apply text-mps-large;
+    @apply text-mps-large text-mps-slate;
   }
 
   .text-small {
-    @apply text-mps-small;
+    @apply text-mps-small text-mps-slate;
   }
 
-  .btn-font {
-    @apply text-base font-bold;
-    font-family: var(--mps-heading-font);
-    letter-spacing: var(--mps-button-letter-spacing);
-    line-height: var(--mps-button-line-height);
+  .mps-card {
+    @apply rounded-card border border-mps-navy/10 bg-white shadow-card;
   }
 
-  /* mps-miami.com: primary-button-style-solid + primary-button-shape-petal */
+  .mps-card-interactive {
+    @apply mps-card transition duration-300 hover:-translate-y-1 hover:shadow-card-hover;
+  }
+
+  .mps-section {
+    @apply scroll-mt-24 py-16 sm:py-20 lg:py-24;
+  }
+
+  .mps-section-header {
+    @apply mx-auto max-w-2xl text-center;
+  }
+
+  .mps-section-intro {
+    @apply mt-4;
+  }
+
+  .mps-section-body {
+    @apply mt-12 sm:mt-14 lg:mt-16;
+  }
+
   .btn-primary,
   .btn-secondary {
-    @apply btn-font inline-flex items-center justify-center border-0 bg-mps-accent text-mps-accent-dark;
-    border-radius: var(--mps-button-radius);
-    padding: var(--mps-button-padding);
-    transition: opacity 0.1s linear;
+    @apply inline-flex h-12 min-h-12 items-center justify-center gap-2 rounded-xl px-6 text-sm font-semibold transition duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-mps-blue active:scale-[0.98];
   }
 
-  .btn-primary:hover,
-  .btn-secondary:hover {
-    opacity: 0.8;
+  .btn-primary {
+    @apply bg-mps-blue text-mps-navy shadow-soft hover:bg-mps-blue-dark hover:shadow-card;
+  }
+
+  .btn-secondary {
+    @apply border-2 border-mps-navy/15 bg-white text-mps-navy hover:border-mps-navy/30 hover:bg-mps-blue-light;
   }
 
   .nav-link {
-    @apply text-mps-body font-normal;
-    font-family: var(--mps-body-font);
-    letter-spacing: var(--mps-body-letter-spacing);
-    line-height: var(--mps-body-line-height);
+    @apply text-sm font-medium text-mps-navy/70 transition-colors hover:text-mps-blue;
   }
 
-  /* Logo-inspired green → cyan → blue gradient (blue-weighted) */
-  .mps-brand-gradient {
-    background: linear-gradient(
-      135deg,
-      color-mix(in srgb, var(--mps-accent) 10%, white) 0%,
-      color-mix(in srgb, var(--mps-cyan) 32%, white) 42%,
-      color-mix(in srgb, var(--mps-blue) 28%, white) 100%
-    );
+  .mps-section-alt {
+    @apply bg-mps-blue-light/50;
+  }
+
+  .mps-icon-badge {
+    @apply inline-flex rounded-2xl bg-mps-blue-light p-3.5 text-mps-blue ring-1 ring-mps-green/15;
+  }
+
+  .mps-float-card {
+    @apply overflow-hidden rounded-float border border-white/70 bg-white/95 shadow-float backdrop-blur-md;
+  }
+
+  .mps-image-wrap {
+    @apply relative overflow-hidden rounded-image shadow-image;
+  }
+
+  .mps-image-blob {
+    @apply pointer-events-none absolute -right-6 -top-6 h-[85%] w-[85%] rounded-full bg-mps-blue/25 blur-3xl;
+  }
+
+  .mps-chip {
+    @apply inline-flex items-center gap-1.5 rounded-full bg-white px-3.5 py-2 text-xs font-medium text-mps-navy ring-1 ring-mps-navy/10;
+  }
+
+  .mps-fade-up {
+    @apply animate-fade-up;
+  }
+
+  .mps-divider {
+    @apply h-px bg-gradient-to-r from-transparent via-mps-navy/10 to-transparent;
   }
 }
 
-/* Content width — single source of truth (overrides Tailwind cache) */
+@media (prefers-reduced-motion: reduce) {
+  .mps-fade-up {
+    animation: none;
+  }
+
+  .mps-card-interactive,
+  .btn-primary,
+  .btn-secondary {
+    transition: none;
+  }
+}
+
 .max-w-content {
   max-width: var(--mps-content-max);
 }
 
-/* Skip link for keyboard users */
 .skip-link {
-  @apply sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:bg-mps-accent focus:px-4 focus:py-2 focus:text-mps-accent-dark;
-  border-radius: var(--mps-button-radius);
+  @apply sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-mps-navy focus:px-4 focus:py-2 focus:text-white;
 }
 
-/* Bilingual-friendly: allow longer Spanish text to wrap naturally */
 h1,
 h2,
 h3 {
@@ -148,17 +162,15 @@ li {
   text-wrap: pretty;
 }
 
-/* Focus styles for accessibility */
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
 select:focus-visible,
 textarea:focus-visible,
 summary:focus-visible {
-  @apply outline-2 outline-offset-2 outline-mps-accent-dark;
+  @apply outline-2 outline-offset-2 outline-mps-blue;
 }
 
-/* Screen reader only utility */
 .sr-only {
   position: absolute;
   width: 1px;

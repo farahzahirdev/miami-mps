@@ -27,7 +27,7 @@ export const copy = {
     ],
     callCta: "Call Now",
     callPrompt: "Prefer to call?",
-    formCta: "Request a Free Consultation",
+    formCta: "Request a Consultation",
     emergencyNote:
       "Please note that we are not an emergency center. In case of an emergency, please call 911.",
   },
@@ -85,13 +85,10 @@ export const copy = {
     images: [
       {
         src: "/images/tms.png",
-        alt: "Transcranial Magnetic Stimulation (TMS) illustration",
-        className: "bg-white",
-      },
-      {
-        src: "/images/tms-equipment.png",
         alt: "TMS treatment equipment at Miami Psychiatric Services",
-        className: "bg-white",
+        fit: "cover",
+        width: 1200,
+        height: 1200,
       },
     ],
   },
@@ -130,13 +127,10 @@ export const copy = {
     images: [
       {
         src: "/images/spravato.png",
-        alt: "Spravato (esketamine) nasal spray treatment",
-        className: "bg-white",
-      },
-      {
-        src: "/images/spravato-product.png",
         alt: "Spravato (esketamine) nasal spray treatment kits",
-        className: "bg-black",
+        fit: "cover",
+        width: 1200,
+        height: 1200,
       },
     ],
   },
@@ -181,13 +175,18 @@ export const copy = {
       "Known for her patient-centered approach, Dr. Ruiz takes time to listen, explain treatment options thoroughly, and develop individualized care plans — including advanced therapies like TMS and Spravato® for patients who need more than medication alone.",
     cta: "Schedule a Consultation with Dr. Ruiz",
     imageAlt: "Professional headshot of Dr. Myuna Ruiz, MD",
+    badges: [
+      "Board Certified Psychiatrist",
+      "University of Puerto Rico Residency",
+      "American Psychiatric Association Member",
+    ],
   },
   whyChoose: {
     eyebrow: "Why Choose Us",
     headline: "Why Choose Miami Psychiatric Services",
     description:
       "When standard antidepressants aren't enough, you need a team that specializes in advanced depression care — with the credentials, technology, and compassion to help you move forward.",
-    cta: "Request a Free Consultation",
+    cta: "Request a Consultation",
     reasons: [
       {
         icon: "shield",
@@ -291,11 +290,25 @@ export const copy = {
     ],
     cta: "Still Have Questions? Contact Us",
   },
+  insurance: {
+    eyebrow: "Insurance & Authorization",
+    headline: "Insurance Made Simple",
+    description:
+      "We verify benefits and handle prior authorization for TMS and Spravato® so you can focus on your health — not paperwork.",
+    points: [
+      "We verify your insurance benefits",
+      "Prior authorization assistance included",
+      "Our team guides you through every step",
+    ],
+    cta: "Request a Consultation",
+  },
   contact: {
     eyebrow: "Get in Touch",
     headline: "Ready to Take the Next Step?",
     description:
       "Whether you are exploring TMS, Spravato®, or simply want to learn more about advanced depression treatment, our team is here to help. Call us today or complete the form below.",
+    formTitle: "Schedule Consultation",
+    formSubtext: "Complete the form and our team will contact you shortly.",
     phoneLabel: "Phone",
     addressLabel: "Address",
     hoursLabel: "Hours",
@@ -318,7 +331,8 @@ export const copy = {
     form: "Inquire",
   },
   media: {
-    aboutClinicAlt: "Miami Psychiatric Services clinic",
+    aboutClinicAlt: "Miami Psychiatric Services care team outside the clinic",
+    heroClinicAlt: "Welcoming Miami psychiatric clinic environment",
   },
 } as const;
 

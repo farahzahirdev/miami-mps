@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { CheckCircle2 } from "lucide-react";
 import { useLocale } from "@/context/LocaleProvider";
 import { InquiryForm } from "./InquiryForm";
@@ -11,51 +12,67 @@ export function Hero() {
   return (
     <section
       aria-labelledby="hero-heading"
-      className="relative overflow-hidden bg-gradient-to-br from-mps-blue-light via-white to-mps-cyan/15"
+      className="relative isolate overflow-hidden"
     >
-      <div className="absolute -right-20 -top-20 h-72 w-72 rounded-full bg-mps-cyan/30 blur-3xl" aria-hidden />
-      <div className="absolute -bottom-16 -left-16 h-64 w-64 rounded-full bg-mps-blue/10 blur-3xl" aria-hidden />
+      <div className="absolute inset-0" aria-hidden>
+        <Image
+          src="/images/hero-services.png"
+          alt=""
+          fill
+          priority
+          quality={90}
+          className="object-cover object-[42%_36%] sm:object-[48%_34%] lg:object-[56%_32%]"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-white/97 via-white/88 to-mps-blue-light/80 lg:bg-gradient-to-r lg:from-white/97 lg:via-white/90 lg:to-mps-blue/25" />
+        <div
+          className="pointer-events-none absolute bottom-0 right-0 h-48 w-52 bg-gradient-to-tl from-white/92 via-white/55 to-transparent sm:h-56 sm:w-64 lg:h-64 lg:w-80"
+          aria-hidden
+        />
+      </div>
 
-      <div className="relative mx-auto grid max-w-content gap-10 px-4 py-12 sm:px-6 lg:grid-cols-2 lg:items-start lg:gap-14 lg:px-8 lg:py-20">
-        <div>
-          <p className="section-eyebrow mb-4">{copy.hero.eyebrow}</p>
-          <h1 id="hero-heading" className="text-mps-navy">
-            {copy.hero.headline}
-          </h1>
-          <p className="text-lead mt-5 max-w-xl text-mps-navy/80">{copy.hero.subheadline}</p>
+      <div className="relative z-10 mx-auto max-w-content px-4 py-10 sm:px-6 sm:py-12 lg:px-8 lg:py-14">
+        <div className="grid w-full items-center gap-8 lg:grid-cols-2 lg:gap-10 xl:gap-12">
+          <div className="mps-fade-up min-w-0 space-y-6">
+            <div className="space-y-4">
+              <p className="section-eyebrow">{copy.hero.eyebrow}</p>
+              <h1 id="hero-heading">{copy.hero.headline}</h1>
+              <p className="text-lead max-w-xl">{copy.hero.subheadline}</p>
+            </div>
 
-          <ul className="mt-6 space-y-3" aria-label="Treatment highlights">
-            {copy.hero.bullets.map((bullet) => (
-              <li key={bullet} className="flex items-start gap-3 text-mps-navy/90">
-                <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-mps-blue" aria-hidden />
-                <span>{bullet}</span>
-              </li>
-            ))}
-          </ul>
+            <ul className="grid gap-4 sm:grid-cols-2" aria-label="Treatment highlights">
+              {copy.hero.bullets.map((bullet) => (
+                <li key={bullet} className="flex items-start gap-3 text-mps-body text-mps-navy/90">
+                  <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-mps-green" aria-hidden />
+                  <span>{bullet}</span>
+                </li>
+              ))}
+            </ul>
 
-          <div className="mt-8 flex flex-wrap items-center gap-4">
-            <Button href="#hero-form" variant="primary" className="lg:hidden">
-              {copy.hero.formCta}
-            </Button>
-            <p className="text-small text-mps-navy/70">
-              {copy.hero.callPrompt}{" "}
-              <a
-                href={site.phoneHref}
-                className="font-heading text-mps-blue hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-mps-blue"
-              >
-                {site.phone}
-              </a>
-            </p>
+            <div className="flex flex-wrap items-center gap-4">
+              <Button href="#hero-form" variant="primary">
+                {copy.hero.formCta}
+              </Button>
+              <Button href={site.phoneHref} variant="secondary" icon>
+                {copy.header.callCta}
+              </Button>
+            </div>
+
+            <p className="text-small text-mps-slate/80">{copy.hero.emergencyNote}</p>
           </div>
 
-          <p className="text-small mt-6 text-mps-navy/60">{copy.hero.emergencyNote}</p>
-        </div>
-
-        <div
-          id="hero-form"
-          className="scroll-mt-24 overflow-hidden rounded-2xl border border-mps-blue/10 bg-white shadow-xl shadow-mps-blue/10"
-        >
-          <InquiryForm id="hero-inquiry" compact embedded />
+          <div
+            id="hero-form"
+            className="mps-fade-up min-w-0 scroll-mt-24 lg:relative lg:z-20 lg:-mb-4"
+            style={{ animationDelay: "120ms" }}
+          >
+            <div className="mps-float-card shadow-float">
+              <div className="border-b border-mps-navy/8 bg-mps-blue-light/50 px-6 py-4 sm:px-7">
+                <p className="text-lg font-semibold text-mps-navy">{copy.hero.formCta}</p>
+              </div>
+              <InquiryForm id="hero-inquiry" compact embedded />
+            </div>
+          </div>
         </div>
       </div>
     </section>

@@ -13,6 +13,7 @@ import {
   Reviews,
 } from "@/components/Sections";
 import { WhyChoose } from "@/components/WhyChoose";
+import { InsuranceStrip } from "@/components/InsuranceStrip";
 import { Footer } from "@/components/Footer";
 import { FloatingCTA } from "@/components/FloatingCTA";
 import { useLocale } from "@/context/LocaleProvider";
@@ -29,7 +30,7 @@ export function HomePage() {
         <About />
         <WhyChoose />
         <TreatmentSection id="tms" variant="tms" images={[...copy.tms.images]} />
-        <div className="bg-mps-blue-light/30">
+        <div className="mps-section-alt">
           <TreatmentSection
             id="spravato"
             variant="spravato"
@@ -41,6 +42,7 @@ export function HomePage() {
         <MeetDoctor />
         <Reviews />
         <FAQ />
+        <InsuranceStrip />
         <Contact />
       </main>
       <Footer />

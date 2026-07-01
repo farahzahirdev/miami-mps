@@ -58,7 +58,7 @@
 | bullet 3 | Insurance verification and prior authorization support |
 | bullet 4 | Serving Miami's Spanish-speaking community |
 | callPrompt | Prefer to call? |
-| formCta | Request a Free Consultation |
+| formCta | Request a Consultation |
 | emergencyNote | Please note that we are not an emergency center. In case of an emergency, please call 911. |
 
 ---
@@ -96,7 +96,7 @@
 | eyebrow | Why Choose Us |
 | headline | Why Choose Miami Psychiatric Services |
 | description | When standard antidepressants aren't enough, you need a team that specializes in advanced depression care — with the credentials, technology, and compassion to help you move forward. |
-| cta | Request a Free Consultation |
+| cta | Request a Consultation |
 
 **Reason 1 — FDA-Cleared Treatments**
 TMS and Spravato® are offered on-site by trained providers in our certified clinic environment.
