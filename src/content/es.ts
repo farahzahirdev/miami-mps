@@ -34,7 +34,7 @@ export const copy = {
   trust: {
     items: [
       { value: "90%+", label: "Comunidad de pacientes hispanohablantes atendida" },
-      { value: "FDA", label: "Opciones TMS y Spravato® autorizadas" },
+      { value: "20 Min", label: "Duración típica de sesión TMS" },
       { value: "ABPN", label: "Liderazgo psiquiátrico certificado" },
       { value: "Kendall", label: "Ubicación conveniente en Miami" },
     ],
@@ -82,6 +82,15 @@ export const copy = {
     cta: "Descubra Si TMS Es Adecuado Para Usted",
     idealFor:
       "TMS puede ser adecuado para usted si ha probado varios antidepresivos sin mejoría adecuada, o si los efectos secundarios de los medicamentos han sido difíciles de tolerar.",
+    conditions: [
+      { id: "condition-depression", label: "Depresión" },
+      { id: "condition-trd", label: "Depresión Resistente al Tratamiento" },
+      { id: "condition-anxiety", label: "Ansiedad" },
+      { id: "condition-ocd", label: "TOC" },
+      { id: "condition-ptsd", label: "TEPT" },
+      { id: "condition-side-effects", label: "Efectos Secundarios de Medicamentos" },
+    ],
+    conditionsHeading: "Condiciones que Tratamos con TMS",
     images: [
       {
         src: "/images/tms.png",
@@ -180,6 +189,30 @@ export const copy = {
       "Residencia Universidad de Puerto Rico",
       "Miembro de la American Psychiatric Association",
     ],
+  },
+  sideEffects: {
+    eyebrow: "Por Qué Elegir TMS",
+    headline: "Vida Sin los Efectos Secundarios de los Antidepresivos",
+    description:
+      "Muchos de nuestros pacientes llegan después de haber probado varios medicamentos. TMS ofrece un enfoque fundamentalmente diferente — actuando directamente en el cerebro.",
+    items: [
+      {
+        title: "Sin Cambios de Peso",
+        description:
+          "TMS no afecta el metabolismo, el apetito ni las hormonas — su peso se mantiene exactamente donde está.",
+      },
+      {
+        title: "Sin Efectos Secundarios Sexuales",
+        description:
+          "A diferencia de muchos ISRS e IRSN, TMS no tiene impacto en la libido ni la función sexual.",
+      },
+      {
+        title: "Sesiones de 20 Min",
+        description:
+          "Sesiones de 20 minutos, 5 días a la semana. Conduzca usted mismo, vaya al trabajo y continúe con su día.",
+      },
+    ],
+    cta: "Solicite una Consulta",
   },
   whyChoose: {
     eyebrow: "Por Qué Elegirnos",
@@ -300,6 +333,19 @@ export const copy = {
       "Asistencia con autorización previa incluida",
       "Nuestro equipo le guía en cada paso",
     ],
+    inNetworkHeading: "Planes de Seguro en Red",
+    inNetworkNote:
+      "Aceptamos la mayoría de los planes de seguro de salud principales. Contáctenos para verificar su cobertura específica.",
+    inNetworkPlans: [
+      "Florida Blue (BCBS)",
+      "Aetna",
+      "Cigna",
+      "UnitedHealthcare",
+      "Humana",
+      "Medicare",
+      "Oscar",
+      "AvMed",
+    ],
     cta: "Solicite una Consulta",
   },
   contact: {
@@ -320,7 +366,19 @@ export const copy = {
     tagline:
       "Nuestro compromiso es brindar atención médica de alta calidad en un entorno profesional y compasivo.",
     contactHeading: "Contacto",
-    quickLinksHeading: "Enlaces Rápidos",
+    treatmentsHeading: "Tratamientos",
+    conditionsHeading: "Condiciones",
+    treatments: [
+      { href: "#tms", label: "Terapia TMS" },
+      { href: "#spravato", label: "Spravato®" },
+    ],
+    conditions: [
+      { href: "#condition-depression", label: "Depresión" },
+      { href: "#condition-trd", label: "Depresión Resistente al Tratamiento" },
+      { href: "#condition-anxiety", label: "Ansiedad" },
+      { href: "#condition-ocd", label: "TOC" },
+      { href: "#condition-ptsd", label: "TEPT" },
+    ],
     rights: "Todos los derechos reservados.",
     disclaimer:
       "Esta página es solo con fines informativos y no constituye asesoramiento médico. Spravato® es una marca registrada de Janssen Pharmaceuticals, Inc.",

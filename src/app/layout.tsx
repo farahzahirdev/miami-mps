@@ -12,6 +12,11 @@ export const metadata: Metadata = {
   title: "TMS & Spravato® Treatment | Miami Psychiatric Services",
   description:
     "Advanced depression treatment in Miami. FDA-cleared TMS therapy and Spravato® for treatment-resistant depression. Bilingual care led by Dr. Myuna Ruiz, MD. Call (754) 289-4005.",
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/favicon.ico",
+  },
   keywords: [
     "TMS Miami",
     "Spravato Miami",
