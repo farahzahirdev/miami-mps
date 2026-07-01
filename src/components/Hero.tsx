@@ -9,11 +9,19 @@ import { Button } from "./Button";
 /** Single wash applied over the whole hero — text column and photo share the same tint */
 const heroWash = `linear-gradient(
   135deg,
-  rgba(255, 255, 255, 0.94) 0%,
-  rgba(255, 255, 255, 0.9) 22%,
-  rgba(235, 247, 253, 0.82) 48%,
-  rgba(235, 247, 253, 0.72) 72%,
-  rgba(212, 239, 250, 0.58) 100%
+  rgba(255, 255, 255, 0.96) 0%,
+  rgba(255, 255, 255, 0.92) 28%,
+  rgba(235, 247, 253, 0.88) 55%,
+  rgba(235, 247, 253, 0.78) 78%,
+  rgba(212, 239, 250, 0.65) 100%
+)`;
+
+const heroWashMobile = `linear-gradient(
+  180deg,
+  rgba(255, 255, 255, 0.97) 0%,
+  rgba(255, 255, 255, 0.94) 35%,
+  rgba(235, 247, 253, 0.9) 65%,
+  rgba(235, 247, 253, 0.85) 100%
 )`;
 
 export function Hero() {
@@ -22,29 +30,27 @@ export function Hero() {
   return (
     <section aria-labelledby="hero-heading" className="relative isolate overflow-hidden bg-mps-blue-light/50">
       <div className="absolute inset-0" aria-hidden>
-        <div className="absolute inset-y-0 left-[28%] right-0 hidden lg:block">
+        <div className="absolute inset-0 lg:inset-y-0 lg:left-[28%] lg:right-0">
           <Image
             src="/images/hero-services.png"
             alt=""
             fill
             priority
             quality={90}
-            className="object-cover object-[58%_38%]"
-            sizes="72vw"
+            className="object-cover object-[58%_38%] opacity-40 lg:opacity-100"
+            sizes="100vw"
           />
         </div>
 
-        <div className="absolute inset-0" style={{ background: heroWash }} />
+        <div
+          className="absolute inset-0 lg:hidden"
+          style={{ background: heroWashMobile }}
+        />
+        <div
+          className="absolute inset-0 hidden lg:block"
+          style={{ background: heroWash }}
+        />
       </div>
-
-      <div
-        className="pointer-events-none absolute -right-20 -top-16 z-[1] h-72 w-72 rounded-full bg-mps-blue/8 blur-3xl"
-        aria-hidden
-      />
-      <div
-        className="pointer-events-none absolute -bottom-20 left-1/4 z-[1] h-64 w-64 rounded-full bg-mps-green/6 blur-3xl"
-        aria-hidden
-      />
 
       <div className="relative z-10 mx-auto max-w-content px-4 py-10 sm:px-6 sm:py-12 lg:px-8 lg:py-14">
         <div className="grid w-full items-center gap-8 lg:grid-cols-2 lg:gap-10 xl:gap-12">
