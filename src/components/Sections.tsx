@@ -13,16 +13,15 @@ export function About() {
   return (
     <section id="about" aria-labelledby="about-heading" className="mps-section bg-white">
       <div className="mx-auto max-w-content px-4 sm:px-6 lg:px-8">
-        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
-          <div className="mps-fade-up mps-image-wrap">
+        <div className="grid min-w-0 items-center gap-12 lg:grid-cols-2 lg:gap-14">
+          <div className="mps-fade-up mps-image-wrap aspect-[16/10] w-full min-w-0">
             <Image
               src="/images/about-team.webp"
               alt={copy.media.aboutClinicAlt}
-              width={960}
-              height={680}
+              fill
               quality={90}
-              className="aspect-[24/17] w-full object-cover object-[center_42%]"
-              sizes="(max-width: 1024px) 100vw, 675px"
+              className="object-cover object-center"
+              sizes="(max-width: 1024px) 100vw, 50vw"
             />
           </div>
 
