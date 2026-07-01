@@ -244,10 +244,11 @@ export function Contact() {
             <div className="mps-card overflow-hidden">
               <iframe
                 title={copy.contact.mapTitle}
-                src="https://maps.google.com/maps?q=12260+SW+8th+St+Ste+154+Miami+FL+33184&output=embed"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3593.3132738820327!2d-80.39689652387777!3d25.760214108665185!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9bf1a234773a7%3A0x6ae274a78d35a90c!2sMiami%20Psychiatric%20Services.%20LLC.!5e0!3m2!1sen!2sus!4v1782911556816!5m2!1sen!2sus"
                 className="min-h-64 w-full border-0"
                 loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
               />
             </div>
           </div>
