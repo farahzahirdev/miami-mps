@@ -87,7 +87,7 @@ html {
   }
 
   .btn-primary {
-    @apply bg-mps-blue text-mps-navy shadow-soft hover:bg-mps-blue-dark hover:shadow-card;
+    @apply bg-mps-blue text-white shadow-soft hover:bg-mps-blue-dark hover:shadow-card;
   }
 
   .btn-secondary {
