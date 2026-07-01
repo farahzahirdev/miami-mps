@@ -16,7 +16,6 @@ import { WhyChoose } from "@/components/WhyChoose";
 import { SideEffects } from "@/components/SideEffects";
 import { InsuranceStrip } from "@/components/InsuranceStrip";
 import { Footer } from "@/components/Footer";
-import { FloatingCTA } from "@/components/FloatingCTA";
 import { useLocale } from "@/context/LocaleProvider";
 
 export function HomePage() {
@@ -25,7 +24,7 @@ export function HomePage() {
   return (
     <>
       <Header />
-      <main id="main-content" className="pb-20 sm:pb-0">
+      <main id="main-content">
         <Hero />
         <TrustBar />
         <InsuranceStrip />
@@ -48,7 +47,6 @@ export function HomePage() {
         <Contact />
       </main>
       <Footer />
-      <FloatingCTA />
     </>
   );
 }
