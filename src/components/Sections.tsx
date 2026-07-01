@@ -66,7 +66,7 @@ export function HowItWorks() {
 
         <ol className="mps-section-body grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {copy.howItWorks.steps.map((step) => (
-            <li key={step.step} className="mps-card-interactive list-none p-6">
+            <li key={step.step} className="list-none rounded-xl border border-mps-navy/8 bg-white p-6 sm:mps-card-interactive">
               <span
                 className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-mps-navy text-sm font-bold text-white"
                 aria-hidden
@@ -95,25 +95,25 @@ export function MeetDoctor() {
   return (
     <section id="doctor" aria-labelledby="doctor-heading" className="mps-section mps-section-alt">
       <div className="mx-auto max-w-content px-4 sm:px-6 lg:px-8">
-        <div className="grid items-start gap-12 lg:grid-cols-2 lg:gap-20">
-          <div className="mps-fade-up mx-auto w-full max-w-md lg:max-w-none">
+        <div className="flex flex-col items-center gap-10 lg:flex-row lg:items-start lg:gap-12 xl:gap-16">
+          <div className="mps-fade-up w-full max-w-[380px] shrink-0 lg:w-[380px]">
             <div className="relative">
               <div className="mps-image-blob" aria-hidden />
               <div className="mps-image-wrap relative">
                 <Image
                   src="/images/dr-myuna-ruiz.png"
                   alt={copy.doctor.imageAlt}
-                  width={401}
-                  height={601}
+                  width={380}
+                  height={506}
                   quality={90}
-                  className="aspect-[4/5] w-full object-cover object-top"
-                  sizes="(max-width: 1024px) 100vw, 540px"
+                  className="h-auto w-[380px] max-w-full object-cover object-top"
+                  sizes="380px"
                 />
               </div>
             </div>
           </div>
 
-          <div className="mps-fade-up space-y-6" style={{ animationDelay: "80ms" }}>
+          <div className="mps-fade-up w-full min-w-0 flex-1 space-y-6" style={{ animationDelay: "80ms" }}>
             <div>
               <p className="section-eyebrow mb-3">{copy.doctor.eyebrow}</p>
               <h2 id="doctor-heading">{copy.doctor.headline}</h2>
@@ -158,7 +158,7 @@ export function Reviews() {
 
         <div className="mps-section-body grid gap-6 sm:grid-cols-2">
           {copy.reviews.items.map((review) => (
-            <blockquote key={review.author} className="mps-card-interactive flex h-full flex-col p-8">
+            <blockquote key={review.author} className="flex h-full flex-col rounded-xl border border-mps-navy/8 bg-white p-6 sm:mps-card-interactive sm:p-8">
               <div className="flex items-center gap-1 text-amber-400" aria-label="5 out of 5 stars">
                 {Array.from({ length: 5 }).map((_, i) => (
                   <Star key={i} className="h-4 w-4 fill-current" aria-hidden />
@@ -196,7 +196,7 @@ export function FAQ() {
         </div>
 
         <div className="mps-section-body mx-auto max-w-3xl">
-          <div className="mps-card px-8 py-8 sm:px-10 sm:py-10">
+          <div className="mps-card rounded-xl border border-mps-navy/8 px-6 py-6 sm:px-10 sm:py-10">
             <FaqList />
           </div>
         </div>
@@ -228,6 +228,17 @@ export function Contact() {
                     className="text-2xl font-semibold text-mps-navy transition hover:text-mps-blue"
                   >
                     {site.phone}
+                  </a>
+                </dd>
+              </div>
+              <div>
+                <dt className="section-eyebrow">{copy.contact.emailLabel}</dt>
+                <dd className="mt-2">
+                  <a
+                    href={site.emailHref}
+                    className="text-lg font-semibold text-mps-navy transition hover:text-mps-blue"
+                  >
+                    {site.email}
                   </a>
                 </dd>
               </div>

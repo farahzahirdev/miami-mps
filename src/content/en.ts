@@ -34,7 +34,7 @@ export const copy = {
   trust: {
     items: [
       { value: "90%+", label: "Spanish-speaking patient community served" },
-      { value: "FDA", label: "Cleared TMS & Spravato® options" },
+      { value: "20 Min", label: "Typical TMS session length" },
       { value: "ABPN", label: "Board-certified psychiatric leadership" },
       { value: "Kendall", label: "Convenient Miami clinic location" },
     ],
@@ -82,6 +82,15 @@ export const copy = {
     cta: "Learn If TMS Is Right for You",
     idealFor:
       "TMS may be right for you if you have tried multiple antidepressants without adequate improvement, or if medication side effects have been difficult to tolerate.",
+    conditions: [
+      { id: "condition-depression", label: "Depression" },
+      { id: "condition-trd", label: "Treatment-Resistant Depression" },
+      { id: "condition-anxiety", label: "Anxiety" },
+      { id: "condition-ocd", label: "OCD" },
+      { id: "condition-ptsd", label: "PTSD" },
+      { id: "condition-side-effects", label: "Medication Side Effects" },
+    ],
+    conditionsHeading: "Conditions We Treat with TMS",
     images: [
       {
         src: "/images/tms.png",
@@ -180,6 +189,30 @@ export const copy = {
       "University of Puerto Rico Residency",
       "American Psychiatric Association Member",
     ],
+  },
+  sideEffects: {
+    eyebrow: "Why Choose TMS",
+    headline: "Life Without the Side Effects of Antidepressants",
+    description:
+      "Many of our patients come having tried multiple medications. TMS offers a fundamentally different approach — working directly in the brain.",
+    items: [
+      {
+        title: "No Weight Changes",
+        description:
+          "TMS doesn't affect metabolism, appetite, or hormones — your weight stays exactly where it is.",
+      },
+      {
+        title: "No Sexual Side Effects",
+        description:
+          "Unlike many SSRIs and SNRIs, TMS has no impact on libido or sexual function.",
+      },
+      {
+        title: "20-Min Sessions",
+        description:
+          "20-minute sessions, 5 days/week. Drive yourself, go to work, and get back to your day.",
+      },
+    ],
+    cta: "Request a Consultation",
   },
   whyChoose: {
     eyebrow: "Why Choose Us",
@@ -300,6 +333,19 @@ export const copy = {
       "Prior authorization assistance included",
       "Our team guides you through every step",
     ],
+    inNetworkHeading: "In-Network Insurance Plans",
+    inNetworkNote:
+      "We accept most major health insurance plans. Contact us to verify your specific coverage.",
+    inNetworkPlans: [
+      "Florida Blue (BCBS)",
+      "Aetna",
+      "Cigna",
+      "UnitedHealthcare",
+      "Humana",
+      "Medicare",
+      "Oscar",
+      "AvMed",
+    ],
     cta: "Request a Consultation",
   },
   contact: {
@@ -320,7 +366,19 @@ export const copy = {
     tagline:
       "Our commitment is to provide high-quality medical care in a professional and caring environment.",
     contactHeading: "Contact",
-    quickLinksHeading: "Quick Links",
+    treatmentsHeading: "Treatments",
+    conditionsHeading: "Conditions",
+    treatments: [
+      { href: "#tms", label: "TMS Therapy" },
+      { href: "#spravato", label: "Spravato®" },
+    ],
+    conditions: [
+      { href: "#condition-depression", label: "Depression" },
+      { href: "#condition-trd", label: "Treatment-Resistant Depression" },
+      { href: "#condition-anxiety", label: "Anxiety" },
+      { href: "#condition-ocd", label: "OCD" },
+      { href: "#condition-ptsd", label: "PTSD" },
+    ],
     rights: "All rights reserved.",
     disclaimer:
       "This page is for informational purposes only and does not constitute medical advice. Spravato® is a registered trademark of Janssen Pharmaceuticals, Inc.",

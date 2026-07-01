@@ -49,13 +49,32 @@ export function TreatmentSection({
               <p className="text-lead mt-4">{data.description}</p>
             </div>
 
-            <p className="text-small rounded-card border border-mps-navy/10 bg-mps-blue-light/80 px-5 py-4 text-mps-navy/90">
+            <p className="text-small rounded-xl border border-mps-navy/10 bg-mps-blue-light/80 px-5 py-4 text-mps-navy/90">
               {data.idealFor}
             </p>
 
-            <div className="grid gap-4 sm:grid-cols-2">
+            {"conditions" in data && data.conditions && (
+              <div>
+                <p className="text-sm font-semibold text-mps-navy">{data.conditionsHeading}</p>
+                <ul className="mt-3 flex flex-wrap gap-2">
+                  {data.conditions.map((condition) => (
+                    <li key={condition.id}>
+                      <a
+                        id={condition.id}
+                        href={`#${condition.id}`}
+                        className="inline-block scroll-mt-28 rounded-full border border-mps-navy/12 bg-white px-3.5 py-1.5 text-sm font-medium text-mps-navy/85 transition hover:border-mps-blue/30 hover:text-mps-blue"
+                      >
+                        {condition.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            <div className="grid gap-3 sm:grid-cols-2 sm:gap-4">
               {data.benefits.map((benefit) => (
-                <div key={benefit.title} className="mps-card-interactive p-5">
+                <div key={benefit.title} className="rounded-xl border border-mps-navy/8 bg-white p-5 sm:mps-card-interactive">
                   <h3 className="text-base font-semibold text-mps-navy">{benefit.title}</h3>
                   <p className="text-small mt-2">{benefit.description}</p>
                 </div>
