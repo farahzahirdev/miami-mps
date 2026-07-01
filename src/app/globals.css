@@ -83,15 +83,15 @@ html {
 
   .btn-primary,
   .btn-secondary {
-    @apply inline-flex h-12 min-h-12 items-center justify-center gap-2 rounded-xl px-6 text-sm font-semibold transition duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-mps-blue active:scale-[0.98];
+    @apply inline-flex h-12 min-h-12 items-center justify-center gap-2 rounded-xl px-6 text-sm font-semibold transition duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98];
   }
 
   .btn-primary {
-    @apply bg-mps-blue text-white shadow-soft hover:bg-mps-blue-dark hover:shadow-card;
+    @apply bg-mps-green text-white shadow-soft hover:bg-mps-green-dark hover:shadow-card focus-visible:outline-mps-green;
   }
 
   .btn-secondary {
-    @apply border-2 border-mps-navy/15 bg-white text-mps-navy hover:border-mps-navy/30 hover:bg-mps-blue-light;
+    @apply border-2 border-mps-navy/15 bg-white text-mps-navy hover:border-mps-navy/30 hover:bg-mps-blue-light focus-visible:outline-mps-blue;
   }
 
   .nav-link {
