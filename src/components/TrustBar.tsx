@@ -1,9 +1,9 @@
 "use client";
 
-import { Clock, Languages, MapPin, ShieldCheck } from "lucide-react";
+import { Award, Languages, MapPin, ShieldCheck } from "lucide-react";
 import { useLocale } from "@/context/LocaleProvider";
 
-const statIcons = [Languages, Clock, ShieldCheck, MapPin];
+const statIcons = [Languages, ShieldCheck, Award, MapPin];
 
 export function TrustBar() {
   const { copy } = useLocale();

@@ -34,7 +34,7 @@ export const copy = {
   trust: {
     items: [
       { value: "90%+", label: "Comunidad de pacientes hispanohablantes atendida" },
-      { value: "20 Min", label: "Duración típica de sesión TMS" },
+      { value: "FDA", label: "Opciones TMS y Spravato® autorizadas" },
       { value: "ABPN", label: "Liderazgo psiquiátrico certificado" },
       { value: "Kendall", label: "Ubicación conveniente en Miami" },
     ],

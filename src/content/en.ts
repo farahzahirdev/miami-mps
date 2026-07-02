@@ -34,7 +34,7 @@ export const copy = {
   trust: {
     items: [
       { value: "90%+", label: "Spanish-speaking patient community served" },
-      { value: "20 Min", label: "Typical TMS session length" },
+      { value: "FDA", label: "Cleared TMS & Spravato® options" },
       { value: "ABPN", label: "Board-certified psychiatric leadership" },
       { value: "Kendall", label: "Convenient Miami clinic location" },
     ],
