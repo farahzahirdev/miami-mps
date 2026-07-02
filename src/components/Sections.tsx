@@ -66,7 +66,7 @@ export function HowItWorks() {
 
         <ol className="mps-section-body grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {copy.howItWorks.steps.map((step) => (
-            <li key={step.step} className="list-none rounded-xl border border-mps-navy/8 bg-white p-6 sm:mps-card-interactive">
+            <li key={step.step} className="list-none border-b border-mps-navy/6 py-6 last:border-b-0 sm:mps-card-interactive sm:border-0 sm:p-6">
               <span
                 className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-mps-navy text-sm font-bold text-white"
                 aria-hidden
@@ -158,7 +158,7 @@ export function Reviews() {
 
         <div className="mps-section-body grid gap-6 sm:grid-cols-2">
           {copy.reviews.items.map((review) => (
-            <blockquote key={review.author} className="flex h-full flex-col rounded-xl border border-mps-navy/8 bg-white p-6 sm:mps-card-interactive sm:p-8">
+            <blockquote key={review.author} className="mps-surface-interactive flex h-full flex-col p-6 sm:p-8">
               <div className="flex items-center gap-1 text-amber-400" aria-label="5 out of 5 stars">
                 {Array.from({ length: 5 }).map((_, i) => (
                   <Star key={i} className="h-4 w-4 fill-current" aria-hidden />
@@ -196,7 +196,7 @@ export function FAQ() {
         </div>
 
         <div className="mps-section-body mx-auto max-w-3xl">
-          <div className="mps-card rounded-xl border border-mps-navy/8 px-6 py-6 sm:px-10 sm:py-10">
+          <div className="mps-surface-interactive px-6 py-6 sm:px-10 sm:py-10">
             <FaqList />
           </div>
         </div>

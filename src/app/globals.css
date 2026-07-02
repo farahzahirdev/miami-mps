@@ -65,6 +65,19 @@ html {
     @apply mps-card transition duration-300 sm:hover:-translate-y-1 sm:hover:shadow-card-hover;
   }
 
+  /* Mobile: soft shadow, no border. Desktop: bordered card with hover. */
+  .mps-surface-interactive {
+    @apply rounded-2xl bg-white shadow-soft transition duration-300 sm:border sm:border-mps-navy/10 sm:shadow-card sm:hover:-translate-y-1 sm:hover:shadow-card-hover;
+  }
+
+  .mps-callout {
+    @apply rounded-2xl bg-mps-blue-light/60 px-5 py-4 shadow-soft sm:border sm:border-mps-navy/10 sm:bg-mps-blue-light/80 sm:shadow-none;
+  }
+
+  .mps-chip-soft {
+    @apply inline-flex items-center rounded-full bg-mps-blue-light/70 px-4 py-2 text-sm font-medium text-mps-navy/85 sm:border sm:border-mps-navy/10 sm:bg-white;
+  }
+
   .mps-section {
     @apply scroll-mt-24 py-12 sm:py-20 lg:py-24;
   }

@@ -11,7 +11,7 @@ export function InsuranceStrip() {
     <section
       id="insurance"
       aria-labelledby="insurance-heading"
-      className="border-b border-mps-navy/8 bg-white py-14 sm:py-16"
+      className="bg-white py-14 sm:border-b sm:border-mps-navy/8 sm:py-16"
     >
       <div className="mx-auto max-w-content px-4 sm:px-6 lg:px-8">
         <div className="mps-fade-up mx-auto max-w-3xl text-center">
@@ -26,7 +26,7 @@ export function InsuranceStrip() {
           {copy.insurance.points.map((point) => (
             <li
               key={point}
-              className="flex items-start gap-3 rounded-xl border border-mps-navy/8 bg-mps-blue-light/40 px-4 py-3.5 text-sm text-mps-navy/90 sm:px-5 sm:py-4"
+              className="flex items-start gap-3 rounded-2xl bg-mps-blue-light/50 px-4 py-3.5 text-sm text-mps-navy/90 shadow-soft sm:border sm:border-mps-navy/8 sm:bg-mps-blue-light/40 sm:px-5 sm:py-4 sm:shadow-none"
             >
               <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-mps-green" aria-hidden />
               <span>{point}</span>
@@ -41,7 +41,7 @@ export function InsuranceStrip() {
             {copy.insurance.inNetworkPlans.map((plan) => (
               <li
                 key={plan}
-                className="rounded-full border border-mps-navy/10 bg-white px-4 py-2 text-sm font-medium text-mps-navy/85"
+                className="mps-chip-soft"
               >
                 {plan}
               </li>

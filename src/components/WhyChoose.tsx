@@ -41,7 +41,7 @@ export function WhyChoose() {
             return (
               <article
                 key={reason.title}
-                className="rounded-xl border border-mps-navy/8 bg-white p-6 sm:mps-card-interactive sm:p-8"
+                className="mps-surface-interactive p-6 sm:p-8"
               >
                 <div className="mps-icon-badge mb-6">
                   <Icon className="h-6 w-6" aria-hidden />
